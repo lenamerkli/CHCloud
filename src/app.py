@@ -11,6 +11,7 @@ import typing as t
 from database import *
 from rand import *
 from util import *
+from login import *
 
 
 load_dotenv()
@@ -49,6 +50,8 @@ setup_logger('access', join(app.root_path, 'logs', 'access.log'))
 access_log = GetLogger('access')
 
 database_init(app)
+
+app.register_blueprint(login_blueprint)
 
 
 @app.errorhandler(404)

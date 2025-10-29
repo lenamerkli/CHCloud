@@ -22,3 +22,10 @@ CREATE TABLE IF NOT EXISTS users (
     theme TEXT NOT NULL,
     locale TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS sessions (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    created TEXT NOT NULL,
+    expires TEXT NOT NULL,
+    browser TEXT NOT NULL
+);
