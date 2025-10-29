@@ -1,15 +1,15 @@
 from datetime import timedelta
 from dotenv import load_dotenv
 from flask import Flask, request, Response, send_from_directory
-from logging import getLogger as GetLogger, basicConfig as log_basicConfig
 from logging import INFO as LOG_INFO  # noqa
+from logging import getLogger as GetLogger, basicConfig as log_basicConfig
 from os import urandom
 from os.path import exists, join
 from requests import request as requests_send
 
 from database import *
-from util import *
 from login import *
+from util import *
 
 
 load_dotenv()

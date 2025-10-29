@@ -1,15 +1,15 @@
 from base64 import urlsafe_b64decode
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
-from hashlib import pbkdf2_hmac
 from flask import request, session, Blueprint
+from hashlib import pbkdf2_hmac
+from logging import log
 from os import environ
 from pydantic import BaseModel, ValidationError
-from user_agents import parse
-from logging import log
 from pyotp import TOTP
 from secrets import randbelow
 from time import sleep
+from user_agents import parse
 
 from database import *
 from rand import *

@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
-from logging import getLogger as GetLogger, Formatter as LogFormatter, FileHandler as LogFileHandler
 from logging import INFO as LOG_INFO  # noqa
+from logging import getLogger as GetLogger, Formatter as LogFormatter, FileHandler as LogFileHandler
 from os import environ
 
 

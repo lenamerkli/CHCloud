@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from flask import g
-from sqlite3 import connect as sqlite_connect, Connection as SQLite_Connection
 from os.path import join
+from sqlite3 import connect as sqlite_connect, Connection as SQLite_Connection
 
 
 __all__ = [
