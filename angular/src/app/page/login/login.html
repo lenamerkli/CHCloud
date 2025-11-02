@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Login to FidesVault</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" required>
+        @if (email?.invalid && email?.touched) {
+          <mat-error>
+            Please enter a valid email address.
+          </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" required>
+        @if (password?.invalid && password?.touched) {
+          <mat-error>
+            Please enter your password.
+          </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>TOTP Code</mat-label>
+        <input matInput type="text" formControlName="totpCode" required maxlength="6">
+        @if (totpCode?.invalid && totpCode?.touched) {
+          <mat-error>
+            Please enter a valid 6-digit TOTP code.
+          </mat-error>
+        }
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card>
