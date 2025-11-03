@@ -81,7 +81,7 @@ def invalidate_session():
 login_blueprint = Blueprint('login', __name__)
 
 
-@login_blueprint.route('/login', methods=['POST'])
+@login_blueprint.route('/api/v1/login', methods=['POST'])
 def r_login():
     try:
         data = dict(request.get_json(silent=True))
@@ -111,7 +111,7 @@ def r_login():
     return {'success': 'success', 'message': 'Successfully signed-in.'}, 200
 
 
-@login_blueprint.route('/logout', methods=['GET', 'POST'])
+@login_blueprint.route('/api/v1//logout', methods=['GET', 'POST'])
 def r_logout():
     invalidate_session()
     return {'success': 'success', 'message': 'Successfully signed-out.'}, 200
