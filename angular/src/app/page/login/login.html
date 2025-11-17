@@ -1,25 +1,25 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Login to FidesVault</mat-card-title>
+    <mat-card-title>Anmeldung für CHCloud</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
+        <mat-label>E-Mail</mat-label>
         <input matInput type="email" formControlName="email" required>
         @if (email?.invalid && email?.touched) {
           <mat-error>
-            Please enter a valid email address.
+            Bitte geben Sie eine gültige E-Mail-Adresse ein.
           </mat-error>
         }
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
+        <mat-label>Passwort</mat-label>
         <input matInput type="password" formControlName="password" required>
         @if (password?.invalid && password?.touched) {
           <mat-error>
-            Please enter your password.
+            Bitte geben Sie Ihr Passwort ein.
           </mat-error>
         }
       </mat-form-field>
@@ -29,12 +29,12 @@
         <input matInput type="text" formControlName="totpCode" required maxlength="6">
         @if (totpCode?.invalid && totpCode?.touched) {
           <mat-error>
-            Please enter a valid 6-digit TOTP code.
+            Bitte geben Sie Ihren TOTP Code ein.
           </mat-error>
         }
       </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Anmelden</button>
     </form>
   </mat-card-content>
 </mat-card>
